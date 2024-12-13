@@ -17,6 +17,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import com.manodev.mvvmmoviesapproomdb.details.presentation.DetailsScreen
 import com.manodev.mvvmmoviesapproomdb.movielist.util.Screen
 import com.manodev.mvvmmoviesapproomdb.ui.theme.MVVMMoviesAppRoomDBTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -47,7 +48,7 @@ class MainActivity : ComponentActivity() {
                             Screen.Details.rout + "/{movieId}",
                             arguments = listOf(navArgument("movieId") { type = NavType.IntType })
                         ) {backStackEntry ->
-                            //DetailsScreen(backStackEntry)
+                            DetailsScreen(backStackEntry)
                         }
                     }
                 }

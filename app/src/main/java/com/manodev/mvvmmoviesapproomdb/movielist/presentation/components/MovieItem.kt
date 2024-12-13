@@ -86,12 +86,13 @@ fun MovieItem(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(6.dp)
-                    .height(250.dp)
+                    .height(320.dp)
                     .clip(RoundedCornerShape(22.dp))
                     .background(MaterialTheme.colorScheme.primaryContainer),
                 contentAlignment = Alignment.Center
             ) {
                 Icon(
+                    modifier = Modifier.size(70.dp),
                     imageVector = Icons.Rounded.ImageNotSupported,
                     contentDescription = movie.title
                 )
