@@ -30,11 +30,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -51,12 +51,6 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
 
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
@@ -89,4 +83,40 @@ dependencies {
 
     // system UI Controller
     implementation(libs.accompanist.systemuicontroller)
+
+    //truth
+
+    implementation(libs.truth)
+
+    androidTestImplementation(libs.hilt.android.testing)
+
+    kaptAndroidTest(libs.hilt.android.compiler)
+
+    androidTestImplementation(libs.androidx.core.testing)
+
+    androidTestImplementation(libs.kotlinx.coroutines.test)
+
+    androidTestImplementation(libs.truth)
+
+    //  Mockito
+
+    testImplementation(libs.mockito.core)
+
+    // Mockito para testes no Android
+
+    androidTestImplementation(libs.mockito.android)
+
+    //Mockito para  mockar classes e métodos constantes
+
+    testImplementation(libs.mockito.inline)
+
+    androidTestImplementation(libs.androidx.junit.v115)
+
+    androidTestImplementation(libs.androidx.espresso.core.v351)
+
+    androidTestImplementation(libs.ui.test.junit4)
+
+    debugImplementation(libs.ui.tooling)
+
+    debugImplementation(libs.ui.test.manifest)
 }
